@@ -6,11 +6,11 @@ import Craousel from "../components/Craousel";
 
 export default function Home() {
   return (
-    <>
+    <div>
       <div><Navbar /></div>
       <div><Craousel/></div>
-      <div><Card/></div> 
+      <div className="m-3"><Card/></div> 
       <div><Footer /></div>
-    </>
+    </div>
   );
 }
