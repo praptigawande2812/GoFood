@@ -1,18 +1,4 @@
-import React, { useState } from 'react'
-import { useNavigate, Link } from 'react-router-dom'
-
-// export default function Carousel() {
-  const containerStyles = {
-    height: "100vh",
-    margin: 0,
-    padding: 0,
-  };
-  const imageStyles = {
-    
-    height: "100%",
-    width: "100%",
-    objectFit: "cover"
-  };
+import React from 'react'
 
 export default function Carousel() {
     return (
@@ -28,14 +14,13 @@ export default function Carousel() {
                         </form>
                     </div>
                     <div className="carousel-item active" >
-                        <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-              style={imageStyles} className="d-block w-100  "  alt="pizza" />
+                        <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" className="d-block w-100 h-100 "  alt="pizza" />
                     </div>
                     <div className="carousel-item">
-                        <img src="https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" className="d-block w-100 "  alt="momos" />
+                        <img src="https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" className="d-block w-100 h-100"  alt="..." />
                     </div>
                     <div className="carousel-item">
-                        <img src="https://images.unsplash.com/photo-1571091718767-18b5b1457add?q=80&w=2072&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" className="d-block w-100 " alt="burger" />
+                        <img src="https://images.unsplash.com/photo-1571091718767-18b5b1457add?q=80&w=2072&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" className="d-block w-100 h-100" alt="..." />
                     </div>
                 </div>
                 <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
