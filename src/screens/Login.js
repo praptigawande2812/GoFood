@@ -25,7 +25,8 @@ export default function Login() {
       const json = await response.json();
       console.log(json);
       if (json.success) {
-        localStorage.setItem('userEmail', credentials.email);
+        localStorage.setItem('userEmail', credentials.email)
+        localStorage.setItem('token', json.authToken)
         navigate("/");
       } else {
         alert("Enter Valid Credentials");

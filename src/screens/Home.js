@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-import Card from "../components/Card";
-import Craousel from "../components/Craousel";
+import Cards from "../components/Cards"; // Ensure the import is correct
+// import Craousel from "../components/Craousel";
 
 export default function Home() {
   const [foodCat, setFoodCat] = useState([]);
@@ -135,11 +135,9 @@ export default function Home() {
                       key={filterItems._id}
                       className="col-12 col-md-6 col-lg-3"
                     >
-                      <Card
-                        foodName={filterItems.name}
-                        item={filterItems}
+                      <Cards
+                        foodItem={filterItems}
                         options={filterItems.options[0]}
-                        ImgSrc={filterItems.img}
                       />
                     </div>
                   ))
