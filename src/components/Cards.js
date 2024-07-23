@@ -8,18 +8,51 @@ export default function Cards(props) { // Ensure the component name starts with 
   const [qty, setQty] = useState(1);
   const [size, setSize] = useState("");
   let data=useCart();
+  let foodItem = props.item;
   let finalPrice= qty*parseInt(options[size]);
   const priceRef=useRef();
   useEffect(() => {
     setSize(priceRef.current.value)
   }, [])
 
-  async function handleAddToCart() {
-    // Add your logic to handle adding to cart here
-    dispatch({ type: "ADD", id: props.foodItem._id, name: props.foodItem.name, price: finalPrice, qty: qty, size: size });
-    console.log(data);
-  }
-
+  const handleAddToCart = async () => {
+    if (!props.foodItem || !props.foodItem._id) {
+      console.error('foodItem is missing or does not have an _id property');
+      return;
+    }
+  
+    if (!Array.isArray(data)) {
+      console.error('data is not an array:', data);
+      return;
+    }
+  
+    // Find the existing item in the cart
+    let existingItem = data.find(item => item.id === props.foodItem._id && item.size === size);
+  
+    if (existingItem) {
+      // Update the quantity of the existing item
+      await dispatch({
+        type: "UPDATE",
+        id: props.foodItem._id,
+        price: finalPrice,
+        qty: qty
+      });
+    } else {
+      // Add a new item to the cart
+      await dispatch({
+        type: "ADD",
+        id: props.foodItem._id,
+        name: props.foodItem.name,
+        price: finalPrice,
+        qty: qty,
+        size: size,
+        img: props.ImgSrc
+      });
+    }
+  };
+  
+  
+  
   return (
     <div>
       <div>
